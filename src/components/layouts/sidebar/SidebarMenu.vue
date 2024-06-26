@@ -12,6 +12,31 @@ const menuSidebars: MenuSidebar[] = [
     link: "/",
   },
   {
+    label: "Pages",
+    icon: "material-symbols-light:newsmode-outline-rounded",
+    active: false,
+    children: [
+      {
+        label: "Auth",
+        icon: "material-symbols-light:shield-lock-rounded",
+        children: [
+          { label: "Login", link: "/auth/login" },
+          { label: "Register", link: "/auth/register" },
+          { label: "Forgot Password", link: "/auth/forgot-password" },
+          { label: "Reset Password", link: "/auth/reset-password" },
+        ],
+      },
+      {
+        label: "Error",
+        icon: "ic:round-warning",
+        children: [
+          { label: "404", link: "/error/404" },
+          { label: "500", link: "/error/500" },
+        ],
+      },
+    ],
+  },
+  {
     label: "Settings",
     icon: "ic:round-settings",
     active: false,

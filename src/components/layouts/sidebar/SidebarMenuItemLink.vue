@@ -22,7 +22,7 @@ const matchRoute = computed(() => pathName === props.menu.link);
   <button
     :class="[
       'w-full flex items-center gap-4 py-2 px-4 text-sm  hover:bg-primary/10  hover:text-primary cursor-pointer rounded-md transition duration-300 ease-in-out',
-      isOpen && matchRoute ? 'bg-primary/10 text-primary' : '',
+      isOpen ? ' text-primary' : '',
       matchRoute && !menu.children?.length ? 'text-primary' : '',
     ]"
     v-bind="attrs"
