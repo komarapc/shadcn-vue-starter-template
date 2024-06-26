@@ -86,6 +86,21 @@ const menuSidebars: MenuSidebar[] = [
           },
         ],
       },
+      {
+        label: "This is very long text to test the overflow",
+        icon: "bi:dash",
+        active: false,
+        children: [
+          {
+            label: "Menu 1.3.1",
+            link: "/menu-level/level-1.3.1",
+          },
+          {
+            label: "Menu 1.3.2",
+            link: "/menu-level/level-1.3.2",
+          },
+        ],
+      },
     ],
   },
 ];
