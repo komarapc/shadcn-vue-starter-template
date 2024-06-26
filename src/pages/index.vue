@@ -7,6 +7,13 @@ import {
   CardContent,
   CardDescription,
 } from "@/components/ui/card";
+import { useSeoMeta } from "@unhead/vue";
+useSeoMeta({
+  title: "Dashboard",
+  description: "Officia pariatur eu minim commodo velit ut ad.",
+  ogTitle: "Dashboard",
+  ogDescription: "Officia pariatur eu minim commodo velit ut ad.",
+});
 </script>
 
 <template>
