@@ -23,7 +23,11 @@ const navMenu = useNavigationMenu();
     <sheet v-bind:open="navMenu.isOpen" @update:open="navMenu.toggle()">
       <sheet-content
         side="left"
-        :class="[theme.darkMode ? 'dark' : '', 'text-foreground/60']"
+        :class="[
+          theme.darkMode ? 'dark' : '',
+          'text-foreground/60',
+          'w-80 p-0',
+        ]"
       >
         <brand-logo class="p-4" />
         <div class="flex-1">

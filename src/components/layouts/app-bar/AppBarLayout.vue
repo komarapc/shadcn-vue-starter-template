@@ -16,17 +16,6 @@ const navMenu = useNavigationMenu();
 
 <template>
   <div class="w-full p-4 h-16 flex items-center justify-between">
-    <div class="mr-4">
-      <button
-        :class="[
-          'p-2 rounded-lg lg:hidden',
-          theme.darkMode ? '' : 'hover:bg-white/60',
-        ]"
-        @click="navMenu.toggle()"
-      >
-        <icon icon="ic:round-menu" width="32" height="32" />
-      </button>
-    </div>
     <div class="w-full lg:hidden">
       <BrandLogo />
     </div>
@@ -43,6 +32,15 @@ const navMenu = useNavigationMenu();
         <icon :icon="themeIcon" width="24" height="24" />
       </Button>
       <user name="Izmi" role="Admin" url="" direction="right" />
+      <button
+        :class="[
+          'p-2 rounded-lg lg:hidden',
+          theme.darkMode ? '' : 'hover:bg-white/60',
+        ]"
+        @click="navMenu.toggle()"
+      >
+        <icon icon="ic:round-menu" width="32" height="32" />
+      </button>
     </div>
   </div>
 </template>
