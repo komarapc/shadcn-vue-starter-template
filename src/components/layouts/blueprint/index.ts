@@ -1,0 +1,1 @@
+export {default as BlueprintAuthenticated} from './BlueprintAuthenticated.vue'
