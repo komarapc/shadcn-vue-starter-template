@@ -35,7 +35,7 @@ const menuSidebars: MenuSidebar[] = [
   },
   {
     label: "Settings",
-    icon: "ic:round-settings",
+    icon: "lets-icons:setting-line-light",
     active: false,
     children: [
       {

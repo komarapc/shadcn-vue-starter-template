@@ -46,6 +46,7 @@ watchEffect(() => {
         :menu="menu"
         :isOpen="isOpen"
         @click="gotoPage(menu.link)"
+        class=""
       />
     </collapsible-trigger>
     <sidebar-menu-item-link
