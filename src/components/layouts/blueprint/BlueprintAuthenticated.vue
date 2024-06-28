@@ -7,9 +7,9 @@ import { AppBarLayout } from "@/components/layouts/app-bar";
 <template>
   <frame-content class="flex">
     <sidebar-layout />
-    <div class="w-full">
+    <div class="w-full lg:ml-[20rem]">
       <app-bar-layout />
-      <div class="p-4">
+      <div class="p-4 space-y-6">
         <slot />
       </div>
     </div>

@@ -4,6 +4,8 @@ import {
   SidebarMenuItem,
 } from "@/components/layouts/sidebar";
 import { MenuSidebar } from "@/interfaces";
+import { useAttrs } from "vue";
+const attrs = useAttrs();
 const menuSidebars: MenuSidebar[] = [
   {
     label: "Dashboard",
@@ -20,19 +22,14 @@ const menuSidebars: MenuSidebar[] = [
         label: "Auth",
         icon: "material-symbols-light:shield-lock-rounded",
         children: [
-          { label: "Login", link: "/auth/login" },
-          { label: "Register", link: "/auth/register" },
-          { label: "Forgot Password", link: "/auth/forgot-password" },
-          { label: "Reset Password", link: "/auth/reset-password" },
+          { label: "Login", link: "/pages/auth/login" },
+          { label: "Register", link: "/pages/auth/register" },
         ],
       },
       {
         label: "Error",
         icon: "ic:round-warning",
-        children: [
-          { label: "404", link: "/error/404" },
-          { label: "500", link: "/error/500" },
-        ],
+        children: [{ label: "404", link: "/error/404" }],
       },
     ],
   },
@@ -107,7 +104,7 @@ const menuSidebars: MenuSidebar[] = [
 </script>
 
 <template>
-  <sidebar-container>
+  <sidebar-container v-bind="attrs">
     <template v-for="menu in menuSidebars">
       <sidebar-menu-item :menu="menu" />
     </template>

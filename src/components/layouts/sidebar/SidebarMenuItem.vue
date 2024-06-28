@@ -55,7 +55,12 @@ watchEffect(() => {
       @click="gotoPage(menu.link)"
     />
     <collapsible-content class="space-y-2" v-if="menu.children?.length">
-      <div class="ml-7 border-l border-primary/60">
+      <div
+        :class="[
+          'ml-7 border-l border-primary/60',
+          menu.children.length ? 'pl-2' : '',
+        ]"
+      >
         <sidebar-menu-item
           v-for="child in menu.children"
           :key="child.label"
