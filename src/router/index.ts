@@ -21,14 +21,33 @@ const routes: RouteRecordRaw[] = [
       {
         path: "auth",
         children: [
-          { path: "login", component: () => import("@/pages/auth/login.vue") },
+          {
+            path: "login",
+            component: () => import("@/pages/auth/login.vue"),
+            name: "login",
+          },
           {
             path: "register",
             component: () => import("@/pages/auth/register.vue"),
           },
+          {
+            path: "forgot-password",
+            name: "forgot-password",
+            component: () => import("@/pages/auth/forgot-password.vue"),
+          },
+          {
+            path: "reset-password",
+            name: "reset-password",
+            component: () => import("@/pages/auth/reset-password.vue"),
+          },
         ],
       },
     ],
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: () => import("@/pages/profile.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

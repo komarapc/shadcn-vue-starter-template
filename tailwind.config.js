@@ -60,8 +60,22 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        portage: {
+          50: "#eff1fe",
+          100: "#e1e5fe",
+          200: "#c9cefc",
+          300: "#969ef8",
+          400: "#8585f4",
+          500: "#7268ec",
+          600: "#624be0",
+          700: "#533dc5",
+          800: "#44349f",
+          900: "#3a317e",
+          950: "#231d49",
+        },
       },
       borderRadius: {
+        none: "0",
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -90,6 +104,22 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
+      },
+      boxShadow: {
+        "top-sm":
+          "0 -5px 10px -5px rgba(0, 0, 0, 0.1), 0 -2px 4px -2px rgba(0, 0, 0, 0.04)",
+        "top-md":
+          "0 -10px 15px -5px rgba(0, 0, 0, 0.1), 0 -5px 5px -5px rgba(0, 0, 0, 0.04)",
+        "top-lg":
+          "0 -15px 20px -5px rgba(0, 0, 0, 0.1), 0 -10px 10px -5px rgba(0, 0, 0, 0.04)",
+        "top-xl":
+          "0 -20px 25px -5px rgba(0, 0, 0, 0.1), 0 -10px 10px -5px rgba(0, 0, 0, 0.04)",
+        "top-2xl":
+          "0 -30px 40px -5px rgba(0, 0, 0, 0.1), 0 -20px 20px -5px rgba(0, 0, 0, 0.04)",
+        "top-3xl":
+          "0 -40px 50px -5px rgba(0, 0, 0, 0.1), 0 -30px 30px -5px rgba(0, 0, 0, 0.04)",
+        "top-4xl":
+          "0 -50px 60px -5px rgba(0, 0, 0, 0.1), 0 -40px 40px -5px rgba(0, 0, 0, 0.04)",
       },
     },
   },

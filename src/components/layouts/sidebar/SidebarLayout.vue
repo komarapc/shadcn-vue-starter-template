@@ -44,6 +44,6 @@ const navMenu = useNavigationMenu();
   top: 0;
   left: 0;
   height: 100vh;
-  z-index: 1000;
+  z-index: 10;
 }
 </style>

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 defineProps<{
-  title?: string
+  title?: string;
   data: {
-    name: string
-    color: string
-    value: any
-  }[]
-}>()
+    name: string;
+    color: string;
+    value: any;
+  }[];
+}>();
 </script>
 
 <template>
-  <Card class="text-sm">
+  <Card class="text-sm bg-popover text-popover-foreground">
     <CardHeader v-if="title" class="p-3 border-b">
       <CardTitle>
         {{ title }}

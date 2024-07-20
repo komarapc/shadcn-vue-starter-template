@@ -26,10 +26,14 @@ useSeoMeta({
       <img :src="imageNotFound" alt="404" class="w-96 h-96" />
 
       <div class="mt-10 text-center">
+        <h1>Sorry!</h1>
         <p class="text-center mt-2">
           The page you are looking for does not exist.
         </p>
-        <Button @click="router.push('/')" class="mt-4">Go back to home </Button>
+        <v-button @click="router.push('/')" class="mt-10 space-x-2 h-12">
+          <icon icon="eva:arrow-back-outline" width="24" />
+          <span>Go back to home</span>
+        </v-button>
       </div>
     </div>
   </div>

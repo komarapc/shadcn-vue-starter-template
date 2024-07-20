@@ -31,20 +31,10 @@ const menuSidebars: MenuSidebar[] = [
         icon: "ic:round-warning",
         children: [{ label: "404", link: "/error/404" }],
       },
-    ],
-  },
-  {
-    label: "Settings",
-    icon: "lets-icons:setting-line-light",
-    active: false,
-    children: [
       {
         label: "Profile",
-        link: "/settings/profile",
-      },
-      {
-        label: "Account",
-        link: "/settings/account",
+        icon: "ph:user",
+        link: "/profile",
       },
     ],
   },

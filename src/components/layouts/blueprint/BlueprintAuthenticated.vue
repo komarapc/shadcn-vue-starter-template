@@ -2,18 +2,21 @@
 import { FrameContent } from "@/components/layouts/frame";
 import { SidebarLayout } from "@/components/layouts/sidebar";
 import { AppBarLayout } from "@/components/layouts/app-bar";
+import { AuthProvider } from "@/components/provider";
 </script>
 
 <template>
-  <frame-content class="flex">
-    <sidebar-layout />
-    <div class="w-full lg:ml-[20rem]">
-      <app-bar-layout />
-      <div class="p-4 space-y-6">
-        <slot />
+  <auth-provider>
+    <frame-content class="flex">
+      <sidebar-layout />
+      <div class="w-full lg:ml-[20rem]">
+        <app-bar-layout />
+        <div class="p-6 space-y-6">
+          <slot />
+        </div>
       </div>
-    </div>
-  </frame-content>
+    </frame-content>
+  </auth-provider>
 </template>
 
 <style scoped></style>

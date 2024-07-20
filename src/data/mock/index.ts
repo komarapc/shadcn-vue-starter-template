@@ -1,3 +1,4 @@
 import { dashboardStatisticTiles } from "./statistik-dashboard";
+import { users } from "./users";
 
-export { dashboardStatisticTiles };
+export { dashboardStatisticTiles, users };

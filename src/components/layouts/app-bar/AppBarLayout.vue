@@ -1,18 +1,16 @@
 <script setup lang="ts">
-import { useNavigationMenu, useThemeStore } from "@/stores";
+import { useAuthStore, useNavigationMenu, useThemeStore } from "@/stores";
 import { Button } from "@/components/ui/button";
 import { User } from "@/components/ui/user";
 
 import { BrandLogo } from "@/components/ui/brand";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useBreadcrumbsStore } from "@/stores/layout";
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
@@ -21,12 +19,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
+
+import { useRouter } from "vue-router";
 const theme = useThemeStore();
-const themeIcon = computed(() =>
-  theme.darkMode
-    ? "line-md:moon-twotone-loop"
-    : "line-md:moon-filled-alt-to-sunny-filled-loop-transition"
-);
 const navMenu = useNavigationMenu();
 const { breadcrumbs } = useBreadcrumbsStore();
 const breadcrumbsLength = computed(() => breadcrumbs.length);
@@ -39,10 +43,19 @@ const breadcrumbsList = computed(() => {
   }
   return lists;
 });
+const showDialogLogout = ref(false);
+const auth = useAuthStore();
+const quit = () => {
+  showDialogLogout.value = false;
+  auth.logout();
+};
+const router = useRouter();
 </script>
 
 <template>
-  <div class="w-full p-4 h-16 flex items-center justify-between">
+  <div
+    class="w-full px-6 h-20 flex items-center justify-between sticky top-0 bg-background/10 backdrop-blur-md z-10"
+  >
     <div class="w-full lg:hidden">
       <BrandLogo />
     </div>
@@ -68,27 +81,28 @@ const breadcrumbsList = computed(() => {
         <Button size="icon" variant="outline">
           <icon icon="ic:round-notifications" width="24" height="24" />
         </Button>
-        <Button
-          size="icon"
-          variant="outline"
-          class="text-foreground"
-          @click="theme.toggleDarkMode()"
-        >
-          <icon :icon="themeIcon" width="24" height="24" />
-        </Button>
+        <toggle-theme />
         <dropdown-menu>
           <dropdown-menu-trigger>
-            <user name="Izmi" role="Admin" url="" direction="right" />
+            <user
+              :name="auth.user?.name!"
+              :role="auth.user?.role.name!"
+              url=""
+              direction="right"
+            />
           </dropdown-menu-trigger>
           <dropdown-menu-content
             :class="[
-              'w-48 mr-4 spay-4',
+              'w-48 mr-4 space-y-2',
               theme.darkMode ? 'dark shadow-lg' : '',
             ]"
           >
             <dropdown-menu-label> Account </dropdown-menu-label>
             <dropdown-menu-separator class="my-2" />
-            <dropdown-menu-item class="flex items-center gap-2">
+            <dropdown-menu-item
+              class="flex items-center gap-2"
+              @click="router.push({ name: 'profile' })"
+            >
               <icon icon="ic:round-account-circle" width="24" height="24" />
               <span> Profile </span>
             </dropdown-menu-item>
@@ -96,9 +110,15 @@ const breadcrumbsList = computed(() => {
               <icon icon="ic:round-settings" width="24" height="24" />
               <span> Settings </span>
             </dropdown-menu-item>
-            <dropdown-menu-item class="flex items-center gap-2">
-              <icon icon="ic:round-logout" width="24" height="24" />
-              <span> Logout </span>
+            <dropdown-menu-item class="focus:bg-transparent">
+              <v-button
+                class="flex items-center justify-start gap-2 w-full"
+                variant="destructive"
+                @click="showDialogLogout = true"
+              >
+                <icon icon="ic:round-logout" width="24" height="24" />
+                <span> Logout </span>
+              </v-button>
             </dropdown-menu-item>
           </dropdown-menu-content>
         </dropdown-menu>
@@ -113,5 +133,33 @@ const breadcrumbsList = computed(() => {
         </button>
       </div>
     </div>
+    <Dialog :open="showDialogLogout">
+      <dialog-content
+        class="z-50 p-10"
+        :class="[theme.darkMode && 'dark', 'bg-card text-card-foreground']"
+        v-bind="$attrs"
+      >
+        <dialog-header>
+          <dialog-title>Logout</dialog-title>
+          <dialog-description>
+            Are you sure you want to logout?
+          </dialog-description>
+        </dialog-header>
+        <dialog-footer>
+          <div class="w-full flex flex-col lg:flex-row gap-4 justify-end">
+            <v-button @click="quit" variant="destructive" class="h-12 w-full"
+              >Yes</v-button
+            >
+            <v-button
+              @click="showDialogLogout = false"
+              variant="secondary"
+              class="h-12 w-full"
+            >
+              No
+            </v-button>
+          </div>
+        </dialog-footer>
+      </dialog-content>
+    </Dialog>
   </div>
 </template>

@@ -40,7 +40,10 @@ const fallBackName = computed(() => {
       <avatar-fallback>{{ fallBackName }}</avatar-fallback>
     </avatar>
     <div
-      :class="['flex flex-col', direction === 'left' ? 'order-2' : 'order-1']"
+      :class="[
+        'flex flex-col items-start',
+        direction === 'left' ? 'order-2' : 'order-1',
+      ]"
     >
       <span>{{ name }}</span>
       <span class="text-xs text-gray-500 truncate"> {{ role }} </span>

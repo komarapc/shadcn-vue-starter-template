@@ -1,4 +1,4 @@
 import { MenuSidebar } from "./menu-sidebar.interface";
 import { Breadcumbs } from "./breadcumbs.interface";
-
-export type { MenuSidebar, Breadcumbs };
+import { User } from "./user.interface";
+export type { MenuSidebar, Breadcumbs, User };
