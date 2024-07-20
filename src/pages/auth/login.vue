@@ -71,6 +71,19 @@ const onSubmit = handleSubmit(async (values) => {
         </template>
       </auth-banner-container>
       <auth-form-container class="flex flex-col">
+        <div
+          class="p-4 rounded-lg border bg-secondary text-secondary-foreground space-y-2 w-full mb-10"
+        >
+          <!-- preview email and password -->
+          <div class="space-x-4">
+            <span>email</span>
+            <span>johndoe@mail.com</span>
+          </div>
+          <div class="space-x-4">
+            <span>password</span>
+            <span>password</span>
+          </div>
+        </div>
         <div class="w-full flex items-center justify-end">
           <v-link to="/pages/auth/register"> Sign up </v-link>
         </div>
