@@ -1,18 +1,29 @@
 <script setup lang="ts">
-import { FrameContent } from "@/components/layouts/frame";
-import { SidebarLayout } from "@/components/layouts/sidebar";
-import { AppBarLayout } from "@/components/layouts/app-bar";
-import { AuthProvider } from "@/components/provider";
+import { FrameContent } from '@/components/layouts/frame';
+import { SidebarLayout } from '@/components/layouts/sidebar';
+import { AppBarLayout } from '@/components/layouts/app-bar';
+import { AuthProvider } from '@/components/provider';
+const year = new Date().getFullYear();
 </script>
 
 <template>
   <auth-provider>
     <frame-content class="flex">
       <sidebar-layout />
-      <div class="w-full lg:ml-[20rem]">
-        <app-bar-layout />
-        <div class="p-6 space-y-6">
-          <slot />
+      <div class="w-full lg:ml-[20rem] flex flex-col justify-between">
+        <div>
+          <app-bar-layout />
+          <div class="p-6 space-y-6">
+            <slot />
+          </div>
+        </div>
+        <div class="h-20 text-center flex flex-col items-center justify-center">
+          <span class="text-muted-foreground">
+            © {{ year }} Izmikomar. All rights reserved.
+          </span>
+          <span class="text-sm text-muted-foreground">
+            Made with ❤️ by Izmikomar Team
+          </span>
         </div>
       </div>
     </frame-content>

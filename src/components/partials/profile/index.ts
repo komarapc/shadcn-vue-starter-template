@@ -1,0 +1,9 @@
+export { default as ProfileJumbotron } from './ProfileJumbotron.vue';
+export { default as ProfilePersonalInformation } from './ProfilePersonalInformation.vue';
+export { default as ProfileEducationBackground } from './ProfileEducationBackground.vue';
+export { default as ProfileEducationBackgroundItem } from './ProfileEducationBackgroundItem.vue';
+export { default as ProfileWorkRecord } from './ProfileWorkRecord.vue';
+export { default as ProfileRecentActivities } from './ProfileRecentActivities.vue';
+export { default as ProfilePerformanceOverview } from './ProfilePerformanceOverview.vue';
+export { default as ProfileWorkRecordItem } from './ProfileWorkRecordItem.vue';
+export { default as ProfileTabMenu } from './ProfileTabMenu.vue';

@@ -46,8 +46,18 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: "/profile",
-    name: "profile",
-    component: () => import("@/pages/profile.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("@/pages/profile/index.vue"),
+        name: "profile",
+      },
+      {
+        path: "update",
+        component: () => import("@/pages/profile/update.vue"),
+        name: "update-profile",
+      },
+    ],
   },
   {
     path: "/:pathMatch(.*)*",

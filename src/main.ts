@@ -1,131 +1,104 @@
-import { createApp } from "vue";
-import "./style.css";
-import App from "./App.vue";
-import router from "@/router";
-import { createPinia } from "pinia";
-import { createHead } from "@unhead/vue";
-import { Icon } from "@iconify/vue";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/components/ui/link";
+import { createApp } from 'vue';
+import './style.css';
+import App from './App.vue';
+import router from '@/router';
+import { createPinia } from 'pinia';
+import { createHead } from '@unhead/vue';
+import { BlueprintAuthenticated } from '@/components/layouts/blueprint';
+import { Icon } from '@iconify/vue';
 import {
   Card,
   CardHeader,
   CardTitle,
+  CardFooter,
   CardDescription,
   CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
 import {
-  Breadcrumb,
-  BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from '@/components/ui/form';
+import { Link } from '@/components/ui/link';
 import {
-  DropdownMenu,
-  DropdownMenuLabel,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
-import { Input, InputCalendar } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
+  Select,
+  SelectItem,
+  SelectLabel,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Separator } from '@/components/ui/separator';
+import { ToggleTheme } from '@/components/partials/toggle';
 import {
   ChartCrosshair,
   ChartLegend,
-  ChartSingleTooltip,
   ChartTooltip,
-} from "@/components/ui/chart";
+  ChartSingleTooltip,
+} from '@/components/ui/chart';
+import { BarChart } from '@/components/ui/chart-bar';
+import { AreaChart } from '@/components/ui/chart-area';
+import { DonutChart } from '@/components/ui/chart-donut';
+import { LineChart } from '@/components/ui/chart-line';
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { BarChart } from "@/components/ui/chart-bar";
-import { LineChart } from "@/components/ui/chart-line";
-import { DonutChart } from "@/components/ui/chart-donut";
-import { AreaChart } from "@/components/ui/chart-area";
-import { ToggleTheme } from "@/components/partials/toggle";
-import { Label } from "@/components/ui/label";
-import {
-  NumberField,
-  NumberFieldInput,
-  NumberFieldContent,
-  NumberFieldDecrement,
-  NumberFieldIncrement,
-} from "@/components/ui/number-field";
-import {
-  PinInput,
-  PinInputGroup,
-  PinInputInput,
-  PinInputSeparator,
-} from "@/components/ui/pin-input";
-import { BlueprintAuthenticated } from "@/components/layouts/blueprint";
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+} from '@/components/ui/dropdown-menu';
+import { Progress } from '@/components/ui/progress';
 const pinia = createPinia();
 const head = createHead();
 createApp(App)
   .use(router)
   .use(pinia)
   .use(head)
-  .component("icon", Icon)
-  .component("v-button", Button)
-  .component("v-link", Link)
-  .component("v-card", Card)
-  .component("v-card-header", CardHeader)
-  .component("v-card-title", CardTitle)
-  .component("v-card-description", CardDescription)
-  .component("v-card-content", CardContent)
-  .component("v-card-footer", CardFooter)
-  .component("v-input", Input)
-  .component("v-input-calendar", InputCalendar)
-  .component("v-label", Label)
-  .component("v-select", Select)
-  .component("select-content", SelectContent)
-  .component("select-group", SelectGroup)
-  .component("select-item", SelectItem)
-  .component("select-label", SelectLabel)
-  .component("select-trigger", SelectTrigger)
-  .component("select-value", SelectValue)
-  .component("breadcrumb", Breadcrumb)
-  .component("breadcrumb-ellipsis", BreadcrumbEllipsis)
-  .component("breadcrumb-item", BreadcrumbItem)
-  .component("breadcrumb-link", BreadcrumbLink)
-  .component("breadcrumb-list", BreadcrumbList)
-  .component("breadcrumb-page", BreadcrumbPage)
-  .component("breadcrumb-separator", BreadcrumbSeparator)
-  .component("blueprint-authenticated", BlueprintAuthenticated)
-  .component("chart-crosshair", ChartCrosshair)
-  .component("chart-area", AreaChart)
-  .component("chart-bar", BarChart)
-  .component("chart-donut", DonutChart)
-  .component("chart-legend", ChartLegend)
-  .component("chart-line", LineChart)
-  .component("chart-tooltip", ChartTooltip)
-  .component("chart-single-tooltip", ChartSingleTooltip)
-  .component("checkbox", Checkbox)
-  .component("dropdown-menu", DropdownMenu)
-  .component("dropdown-menu-label", DropdownMenuLabel)
-  .component("dropdown-menu-content", DropdownMenuContent)
-  .component("dropdown-menu-separator", DropdownMenuSeparator)
-  .component("dropdown-menu-item", DropdownMenuItem)
-  .component("dropdown-menu-trigger", DropdownMenuTrigger)
-  .component("number-field", NumberField)
-  .component("number-field-input", NumberFieldInput)
-  .component("number-field-content", NumberFieldContent)
-  .component("number-field-decrement", NumberFieldDecrement)
-  .component("number-field-increment", NumberFieldIncrement)
-  .component("pin-input", PinInput)
-  .component("pin-input-group", PinInputGroup)
-  .component("pin-input-input", PinInputInput)
-  .component("pin-input-separator", PinInputSeparator)
-
-  .component("toggle-theme", ToggleTheme)
-  .mount("#app");
+  .component('BlueprintAuthenticated', BlueprintAuthenticated)
+  .component('ChartCrosshair', ChartCrosshair)
+  .component('ChartLegend', ChartLegend)
+  .component('ChartTooltip', ChartTooltip)
+  .component('ChartSingleTooltip', ChartSingleTooltip)
+  .component('ChartBar', BarChart)
+  .component('ChartArea', AreaChart)
+  .component('ChartDonut', DonutChart)
+  .component('ChartLine', LineChart)
+  .component('Checkbox', Checkbox)
+  .component('DropdownMenu', DropdownMenu)
+  .component('DropdownMenuTrigger', DropdownMenuTrigger)
+  .component('DropdownMenuItem', DropdownMenuItem)
+  .component('DropdownMenuContent', DropdownMenuContent)
+  .component('DropdownMenuLabel', DropdownMenuLabel)
+  .component('FormControl', FormControl)
+  .component('FormDescription', FormDescription)
+  .component('FormField', FormField)
+  .component('FormItem', FormItem)
+  .component('FormLabel', FormLabel)
+  .component('FormMessage', FormMessage)
+  .component('Icon', Icon)
+  .component('SelectItem', SelectItem)
+  .component('SelectLabel', SelectLabel)
+  .component('SelectContent', SelectContent)
+  .component('SelectTrigger', SelectTrigger)
+  .component('SelectValue', SelectValue)
+  .component('Separator', Separator)
+  .component('ToggleTheme', ToggleTheme)
+  .component('VLink', Link)
+  .component('VButton', Button)
+  .component('VCard', Card)
+  .component('VCardHeader', CardHeader)
+  .component('VCardTitle', CardTitle)
+  .component('VCardFooter', CardFooter)
+  .component('VCardDescription', CardDescription)
+  .component('VCardContent', CardContent)
+  .component('VCheckbox', Checkbox)
+  .component('VProgress', Progress)
+  .component('VInput', Input)
+  .component('VSelect', Select)
+  .mount('#app');

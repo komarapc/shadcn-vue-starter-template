@@ -10,7 +10,7 @@ const navMenu = useNavigationMenu();
 </script>
 <template>
   <div
-    class="hidden lg:flex flex-col w-80 border-r shrink-0 shadow-md text-foreground/60 sticky-sidebar"
+    class="hidden lg:flex flex-col w-80 shrink-0 text-foreground/90 sticky-sidebar"
     v-bind="attrs"
     :class="[theme.darkMode ? '' : 'border-gray-300']"
   >

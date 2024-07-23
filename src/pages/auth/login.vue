@@ -20,6 +20,7 @@ import { useForm } from "vee-validate";
 import { SocialSignIn } from "@/components/partials/socials";
 import { useAuthStore } from "@/stores";
 import { useRoute, useRouter } from "vue-router";
+import { watchEffect } from "vue";
 useSeoMeta({
   title: "Login",
   description: "Login to your account",
@@ -56,6 +57,14 @@ const onSubmit = handleSubmit(async (values) => {
       "password",
       signIn?.error || "The password you entered is incorrect."
     );
+  }
+});
+watchEffect(() => {
+  auth.checkAuth();
+});
+watchEffect(() => {
+  if (auth.isAuth) {
+    router.go(-1);
   }
 });
 </script>

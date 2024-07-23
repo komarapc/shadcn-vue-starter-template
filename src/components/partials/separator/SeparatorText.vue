@@ -5,13 +5,13 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div className="flex items-center gap-4">
-    <div className="w-full">
-      <Separator className="w-full" />
+  <div class="flex items-center gap-4">
+    <div class="w-full">
+      <Separator class="w-full" />
     </div>
-    <div className="text-center min-w-36">{{ text }}</div>
-    <div className="w-full">
-      <Separator className="w-full" />
+    <div class="text-center min-w-36">{{ text }}</div>
+    <div class="w-full">
+      <Separator class="w-full" />
     </div>
   </div>
 </template>
