@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { useAuthStore, useNavigationMenu, useThemeStore } from "@/stores";
-import { Button } from "@/components/ui/button";
-import { User } from "@/components/ui/user";
+import { useAuthStore, useNavigationMenu, useThemeStore } from '@/stores';
+import { Button } from '@/components/ui/button';
+import { User } from '@/components/ui/user';
 
-import { BrandLogo } from "@/components/ui/brand";
-import { computed, ref } from "vue";
-import { useBreadcrumbsStore } from "@/stores/layout";
+import { BrandLogo } from '@/components/ui/brand';
+import { computed, ref } from 'vue';
+import { useBreadcrumbsStore } from '@/stores/layout';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from '@/components/ui/breadcrumb';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import {
   Dialog,
   DialogHeader,
@@ -27,9 +27,9 @@ import {
   DialogDescription,
   DialogContent,
   DialogClose,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router';
 const theme = useThemeStore();
 const navMenu = useNavigationMenu();
 const { breadcrumbs } = useBreadcrumbsStore();
@@ -38,7 +38,7 @@ const breadcrumbsList = computed(() => {
   const lists = [...breadcrumbs];
   if (breadcrumbsLength.value > 3) {
     lists.splice(1, breadcrumbsLength.value - 3, {
-      label: "...",
+      label: '...',
     });
   }
   return lists;
@@ -88,7 +88,7 @@ const router = useRouter();
               :name="auth.user?.name!"
               :role="auth.user?.role.name!"
               url=""
-              direction="right"
+              direction="left"
             />
           </dropdown-menu-trigger>
           <dropdown-menu-content

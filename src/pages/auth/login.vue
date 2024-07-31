@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { useSeoMeta } from "@unhead/vue";
-import { FrameContent } from "@/components/layouts/frame";
-import AuthImg from "@/assets/svg/application.svg";
-import { toTypedSchema } from "@vee-validate/zod";
-import * as z from "zod";
+import { useSeoMeta } from '@unhead/vue';
+import { FrameContent } from '@/components/layouts/frame';
+import AuthImg from '@/assets/svg/application.svg';
+import { toTypedSchema } from '@vee-validate/zod';
+import * as z from 'zod';
 import {
   AuthContainer,
   AuthBannerContainer,
   AuthFormContainer,
-} from "@/components/partials/auth";
+} from '@/components/partials/auth';
 import {
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { useForm } from "vee-validate";
-import { SocialSignIn } from "@/components/partials/socials";
-import { useAuthStore } from "@/stores";
-import { useRoute, useRouter } from "vue-router";
-import { watchEffect } from "vue";
+} from '@/components/ui/form';
+import { useForm } from 'vee-validate';
+import { SocialSignIn } from '@/components/partials/socials';
+import { useAuthStore } from '@/stores';
+import { useRoute, useRouter } from 'vue-router';
+import { watchEffect } from 'vue';
 useSeoMeta({
-  title: "Login",
-  description: "Login to your account",
+  title: 'Login',
+  description: 'Login to your account',
 });
 
 const schema = toTypedSchema(
@@ -42,20 +42,20 @@ const router = useRouter();
 const onSubmit = handleSubmit(async (values) => {
   const signIn = await auth.login(values.email, values.password);
   if (!signIn?.key) {
-    router.push({ path: "/" });
+    router.push({ path: '/' });
     return;
   }
-  if (signIn?.key === "email") {
+  if (signIn?.key === 'email') {
     // set error message for email field
     setFieldError(
-      "email",
+      'email',
       signIn?.error || "We couldn't find an account with that email address."
     );
-  } else if (signIn?.key === "password") {
+  } else if (signIn?.key === 'password') {
     // set error message for password field
     setFieldError(
-      "password",
-      signIn?.error || "The password you entered is incorrect."
+      'password',
+      signIn?.error || 'The password you entered is incorrect.'
     );
   }
 });
@@ -80,19 +80,6 @@ watchEffect(() => {
         </template>
       </auth-banner-container>
       <auth-form-container class="flex flex-col">
-        <div
-          class="p-4 rounded-lg border bg-secondary text-secondary-foreground space-y-2 w-full mb-10"
-        >
-          <!-- preview email and password -->
-          <div class="space-x-4">
-            <span>email</span>
-            <span>johndoe@mail.com</span>
-          </div>
-          <div class="space-x-4">
-            <span>password</span>
-            <span>password</span>
-          </div>
-        </div>
         <div class="w-full flex items-center justify-end">
           <v-link to="/pages/auth/register"> Sign up </v-link>
         </div>

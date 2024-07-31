@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAttrs } from "vue";
+import { useAttrs } from 'vue';
 
 const attr = useAttrs();
 </script>

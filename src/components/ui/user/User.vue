@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { computed, PropType } from "vue";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { computed, PropType } from 'vue';
 const props = defineProps({
   name: {
     type: String,
@@ -15,16 +15,16 @@ const props = defineProps({
     required: true,
   },
   direction: {
-    type: String as PropType<"left" | "right">,
-    default: "left",
+    type: String as PropType<'left' | 'right'>,
+    default: 'left',
   },
 });
 
 const fallBackName = computed(() => {
   return props.name
-    .split(" ")
+    .split(' ')
     .map((n) => n[0])
-    .join("")
+    .join('')
     .toUpperCase();
 });
 </script>

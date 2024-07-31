@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { MenuSidebar } from "@/interfaces";
+import { MenuSidebar } from '@/interfaces';
 
-import { computed, PropType, useAttrs } from "vue";
-import { useRouter } from "vue-router";
+import { computed, PropType, useAttrs } from 'vue';
+import { useRouter } from 'vue-router';
 const attrs = useAttrs();
 const props = defineProps({
   menu: {

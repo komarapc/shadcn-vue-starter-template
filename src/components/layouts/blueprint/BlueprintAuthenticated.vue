@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
       <div class="w-full lg:ml-[20rem] flex flex-col justify-between">
         <div>
           <app-bar-layout />
-          <div class="p-6 space-y-6">
+          <div class="p-6 space-y-6 max-w-screen-2xl mx-auto">
             <slot />
           </div>
         </div>

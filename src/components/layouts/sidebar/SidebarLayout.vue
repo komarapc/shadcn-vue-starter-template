@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useAttrs } from "vue";
-import { SidebarMenu } from "@/components/layouts/sidebar";
-import { BrandLogo } from "@/components/ui/brand";
-import { useNavigationMenu, useThemeStore } from "@/stores";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { useAttrs } from 'vue';
+import { SidebarMenu } from '@/components/layouts/sidebar';
+import { BrandLogo } from '@/components/ui/brand';
+import { useNavigationMenu, useThemeStore } from '@/stores';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 const theme = useThemeStore();
 const attrs = useAttrs();
 const navMenu = useNavigationMenu();
@@ -12,7 +12,6 @@ const navMenu = useNavigationMenu();
   <div
     class="hidden lg:flex flex-col w-80 shrink-0 text-foreground/90 sticky-sidebar"
     v-bind="attrs"
-    :class="[theme.darkMode ? '' : 'border-gray-300']"
   >
     <brand-logo class="p-4" />
     <div class="flex-1">
