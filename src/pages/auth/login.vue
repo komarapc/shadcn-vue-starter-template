@@ -64,7 +64,7 @@ watchEffect(() => {
 });
 watchEffect(() => {
   if (auth.isAuth) {
-    router.go(-1);
+    router.push({ name: 'index' });
   }
 });
 </script>
