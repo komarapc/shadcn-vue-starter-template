@@ -15,8 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 258 90% 66%;
-    --primary-foreground: 250 100% 98%;
+    --primary: 245 78% 67%;
+    --primary-foreground: 232 88% 97%;
 
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -32,7 +32,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 258 90% 66%;
+    --ring: 245 78% 67%;
     --radius: 0.8rem;
 
     --vis-tooltip-background-color: none !important;
@@ -68,8 +68,8 @@
     --popover: 0 0% 20%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 258 90% 66%;
-    --primary-foreground: 250 100% 98%;
+    --primary: 245 78% 67%;
+    --primary-foreground: 232 88% 97%;
 
     --secondary: 255 0% 75%;
     --secondary-foreground: 0 0% 0%;
@@ -85,7 +85,7 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 25%;
-    --ring: 258 90% 66%;
+    --ring: 245 78% 67%;
 
     ::-webkit-scrollbar {
       @apply w-2 h-2;
