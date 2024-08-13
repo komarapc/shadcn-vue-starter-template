@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { MenuSidebar } from "@/interfaces";
-import { computed, PropType, ref, watchEffect } from "vue";
+import { MenuSidebar } from '@/interfaces';
+import { computed, PropType, ref, watchEffect } from 'vue';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { SidebarMenuItemLink } from "@/components/layouts/sidebar";
-import { useRouter } from "vue-router";
-import { useNavigationMenu } from "@/stores";
+} from '@/components/ui/collapsible';
+import { SidebarMenuItemLink } from '@/components/layouts/sidebar';
+import { useRouter } from 'vue-router';
+import { useNavigationMenu } from '@/stores';
 const props = defineProps({
   menu: {
     type: Object as PropType<MenuSidebar>,
@@ -46,7 +46,7 @@ watchEffect(() => {
         :menu="menu"
         :isOpen="isOpen"
         @click="gotoPage(menu.link)"
-        class=""
+        :class="[isOpen ? 'bg-primary/10' : '']"
       />
     </collapsible-trigger>
     <sidebar-menu-item-link
