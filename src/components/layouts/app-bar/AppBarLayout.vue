@@ -133,30 +133,26 @@ const router = useRouter();
         </button>
       </div>
     </div>
-    <Dialog :open="showDialogLogout">
+    <Dialog :open="showDialogLogout" @update:open="showDialogLogout = false">
       <dialog-content
-        class="z-50 p-10"
+        class="z-50"
         :class="[theme.darkMode && 'dark', 'bg-card text-card-foreground']"
         v-bind="$attrs"
       >
         <dialog-header>
-          <dialog-title>Logout</dialog-title>
-          <dialog-description>
+          <dialog-title class="text-center">Exit</dialog-title>
+        </dialog-header>
+        <dialog-body>
+          <dialog-description class="text-center">
             Are you sure you want to logout?
           </dialog-description>
-        </dialog-header>
+        </dialog-body>
         <dialog-footer>
-          <div class="w-full flex flex-col lg:flex-row gap-4 justify-end">
-            <v-button @click="quit" variant="destructive" class="h-12 w-full"
-              >Yes</v-button
-            >
-            <v-button
-              @click="showDialogLogout = false"
-              variant="secondary"
-              class="h-12 w-full"
-            >
+          <div class="w-full flex flex-col lg:flex-row gap-4 justify-center">
+            <v-button @click="showDialogLogout = false" variant="secondary">
               No
             </v-button>
+            <v-button @click="quit" variant="destructive"> Yes </v-button>
           </div>
         </dialog-footer>
       </dialog-content>

@@ -3,6 +3,7 @@ import { FrameContent } from '@/components/layouts/frame';
 import { SidebarLayout } from '@/components/layouts/sidebar';
 import { AppBarLayout } from '@/components/layouts/app-bar';
 import { AuthProvider } from '@/components/provider';
+import { Footer } from '@/components/partials/footer';
 const year = new Date().getFullYear();
 </script>
 
@@ -17,14 +18,7 @@ const year = new Date().getFullYear();
             <slot />
           </div>
         </div>
-        <div class="h-20 text-center flex flex-col items-center justify-center">
-          <span class="text-muted-foreground">
-            © {{ year }} Izmikomar. All rights reserved.
-          </span>
-          <span class="text-sm text-muted-foreground">
-            Made with ❤️ by Izmikomar Team
-          </span>
-        </div>
+        <Footer author="izmikomar.com" />
       </div>
     </frame-content>
   </auth-provider>
