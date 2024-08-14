@@ -28,7 +28,7 @@ const props = defineProps({
     <v-card
       :class="[
         'w-full min-h-[200px] lg:min-h-[280px] rounded-none relative',
-        theme.darkMode ? 'bg-portage-800' : 'bg-portage-800',
+        theme.darkMode ? 'bg-portage-600' : 'bg-portage-600',
       ]"
     >
       <v-button
